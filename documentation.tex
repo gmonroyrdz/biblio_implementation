@@ -1,7 +1,7 @@
 \documentclass[10pt,letterpaper]{article}
 \usepackage[spanish]{babel}
 \usepackage{listings}
-
+\usepackage{graphicx}
 % Preámbulo
 
 \title{Sistema de gestión de una Biblioteca Universitaria}
@@ -42,11 +42,29 @@
 \maketitle
 \tableofcontents
 \lstlistoflistings
+\listoffigures
 
 \section{Introducción}
 
 \section{Descripción del problema}
+
+Una biblioteca universitaria necesita digitalizar su operación. Actualmente lleva el control en papel y requiere un sistema computacional que gestione su acervo, los prestamos y los usuarios.
+
+\subsection{Descripción del dominio}
+La  biblioteca cuenta con \textbf{libro}, de os cuales puede tener varios \textbf{ejemplares} físicos para cada título. Cada libro tienen un título, año de publicación, ISBN y pertenece a una o mas \textbf{categorías} (Ciencias, Humanidades, Ingeniería, etc.). Además, cada libro fue escrito por uno o más \textbf{autores}.
+
+Los \textbf{usuarios} pueden ser estudiantes o profesores. De cada uno se guarda el nombre, correo , número de cuenta y tipo. Un usuario puede tener \textbf{activos} varios préstamos simultáneos (máximo 3), pero un ejemplar solo puede estar prestado a un usuario a la vez.
+
+Cada \textbf{préstamo} registra la fecha de salida, la fecha de devolución esperada y la fecha real de devolución (en el caso de que ya se haya devuelto el ejemplar). Si un préstamo se devuelve más tarde, se registra una \textbf{multa} con el monto y si fue pagada o no.
+
+
 \subsection{Análisis y diseño}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{imgs/der.png}
+    \caption{Diagrama entidad-relación para el modelo de datos de una Biblioteca Universitaria.}\label{fig_der}
+\end{figure}
+
 \subsection{Implementación y validación}
 
 
